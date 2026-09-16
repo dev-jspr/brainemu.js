@@ -42,10 +42,6 @@ Below is a complete guide with examples.
 ---
 
 ## 1️⃣ Plugging in a Map (recommended for world/game state)
-
-Use this when you want to feed a **consistent set of values** every frame.
-
-```js
 addMap("world", {
   playerX: player.x,
   playerY: player.y,
@@ -53,10 +49,9 @@ addMap("world", {
   health: player.health,
   ammo: player.ammo
 });
-
+and
 bindMapToInputs("world");
 stimulateGroup(brainA, "world");
-also
 autoBind("enemy", {
   danger: enemy.danger,
   speed: enemy.speed,
@@ -65,7 +60,7 @@ autoBind("enemy", {
 });
 
 stimulateGroup(brainA, "enemy");
-});
+
 
 ### 🎯 Reinforcement learning
 - Reward / punish system  
