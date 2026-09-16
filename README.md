@@ -25,7 +25,46 @@ Supports:
 - Game states  
 - Robot sensors  
 - Custom objects  
-- Multiple input groups at once  
+- Multiple input groups at once
+  ## 🔌 How to Plug Anything Into Js‑Brain
+
+One of the main goals of Js‑Brain is to make input flexible.  
+If your object has **numbers**, the brain can learn from it.
+
+There are **three** ways to plug data into the brain:
+
+1. `addMap()` + `bindMapToInputs()` — structured input groups  
+2. `autoBind()` — plug in ANY object instantly  
+3. Raw neuron stimulation — direct control
+
+Below is a complete guide with examples.
+
+---
+
+## 1️⃣ Plugging in a Map (recommended for world/game state)
+
+Use this when you want to feed a **consistent set of values** every frame.
+
+```js
+addMap("world", {
+  playerX: player.x,
+  playerY: player.y,
+  enemyDistance: enemy.distance,
+  health: player.health,
+  ammo: player.ammo
+});
+
+bindMapToInputs("world");
+stimulateGroup(brainA, "world");
+also
+autoBind("enemy", {
+  danger: enemy.danger,
+  speed: enemy.speed,
+  distance: enemy.distance,
+  health: enemy.health
+});
+
+stimulateGroup(brainA, "enemy");
 
 ### 🎯 Reinforcement learning
 - Reward / punish system  
