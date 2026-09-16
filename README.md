@@ -65,6 +65,7 @@ autoBind("enemy", {
 });
 
 stimulateGroup(brainA, "enemy");
+});
 
 ### 🎯 Reinforcement learning
 - Reward / punish system  
